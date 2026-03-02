@@ -1,0 +1,19 @@
+<nz-layout class="layout">
+  <nz-header>
+    <div class="logo">Angular 20 + Ng Zorro</div>
+    <ul nz-menu nzTheme="dark" nzMode="horizontal">
+      @for (route of menuItems(); track route.title) {
+         <li nz-menu-item [routerLink]="route.path">{{route.title}}</li>
+      }
+
+    </ul>
+  </nz-header>
+
+  <nz-content class="content">
+    <router-outlet />
+  </nz-content>
+
+  <nz-footer>
+    Angular 20 ©2026 Created with Ng Zorro
+  </nz-footer>
+</nz-layout>

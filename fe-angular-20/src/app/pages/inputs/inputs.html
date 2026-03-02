@@ -1,0 +1,23 @@
+<form [formGroup]="fg" class="flex flex-col">
+  <app-input label="Input Text" formControlName="input"></app-input>
+  <app-radio
+    label="Radio"
+    formControlName="radio"
+    [options]="[
+      { label: 'Yes', value: 'Yes' },
+      { label: 'No', value: 'No' },
+    ]"
+  ></app-radio>
+  <app-select
+    label="Select"
+    formControlName="select"
+    [options]="[
+      { label: 'Dog', value: { name: 'Dog', age: 1 } },
+      { label: 'Cat', value: { name: 'Cat', age: 2 } },
+    ]"
+  ></app-select>
+</form>
+
+<pre id="json-output">
+  {{ fg.getRawValue() | json }}
+</pre>

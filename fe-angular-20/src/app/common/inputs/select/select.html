@@ -1,0 +1,17 @@
+@if (!!label()) {
+  <label>{{ label() }}</label>
+}
+
+<nz-select
+  [ngModel]="value"
+  (ngModelChange)="onValueChange($event)"
+  [nzPlaceHolder]="placeholder()"
+  [nzAllowClear]="allowClear()"
+  [nzShowSearch]="showSearch()"
+  [nzDisabled]="disabled"
+  style="width: 100%"
+>
+  @for (option of options(); track option.value) {
+    <nz-option [nzLabel]="option.label" [nzValue]="option.value"></nz-option>
+  }
+</nz-select>

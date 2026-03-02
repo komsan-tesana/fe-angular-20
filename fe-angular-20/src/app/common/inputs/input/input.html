@@ -1,0 +1,14 @@
+@if (!!label()) {
+  <label>{{ label() }}</label>
+}
+
+<input
+  nz-input
+  [attr.type]="type()"
+  [disabled]="disabled"
+  [nzSize]="size()"
+  [placeholder]="placeholder()"
+  [value]="value"
+  (input)="onInput($event)"
+  (blur)="onTouched()"
+/>
